@@ -1,0 +1,62 @@
+/* Resetting default margin and padding */
+body,
+ul,
+table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the header */
+header {
+    background-color: burlywood;
+    color: white;
+    text-align: center;
+}
+
+.name {
+    padding-bottom: 2px;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px; 
+}
+
+/* Styling the content sections */
+.content {
+    padding: 20px;
+    background-color: bisque;
+}
+
+/* Styling sections */
+section {
+    margin-bottom: 40px;
+}
+
+/* Styling the table */
+table {
+    /* width: 100%; */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Styling the footer */
+.footer {
+    background-color: burlywood;
+    margin-left: 0px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    color: black;
+}
