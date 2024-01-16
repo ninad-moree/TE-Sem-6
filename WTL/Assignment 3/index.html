@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <header>
+        <div class="header-info">
+            <h2 class="name" style="color: black;">Calculator</h2>
+        </div>
+    </header> -->
+
+    <div id="calculator">
+        <input type="text" id="display" readonly>
+        <br>
+        <button onclick="appendNumber('1')">1</button>
+        <button onclick="appendNumber('2')">2</button>
+        <button onclick="appendNumber('3')">3</button>
+        <button class="operator" onclick="appendOperator('+')">+</button>
+        <br>
+        <button onclick="appendNumber('4')">4</button>
+        <button onclick="appendNumber('5')">5</button>
+        <button onclick="appendNumber('6')">6</button>
+        <button class="operator" onclick="appendOperator('-')">-</button>
+        <br>
+        <button onclick="appendNumber('7')">7</button>
+        <button onclick="appendNumber('8')">8</button>
+        <button onclick="appendNumber('9')">9</button>
+        <button class="operator" onclick="appendOperator('*')">*</button>
+        <br>
+        <button onclick="appendNumber('0')">0</button>
+        <button class="operator" onclick="calculateResult()">=</button>
+        <button onclick="clearDisplay()">C</button>
+        <button class="operator" onclick="appendOperator('/')">/</button>
+        <br>
+        <button class="operator" onclick="calculateSquare()">x²</button>
+        <button class="operator" onclick="calculateCube()">x³</button>
+        <button class="operator" onclick="appendOperator('**')">x<sup>y</sup></button>
+        <button class="operator" onclick="calculateLog()">log</button>
+    </div>
+
+    <script>
+        function appendNumber(number) {
+            document.getElementById('display').value += number;
+        }
+
+        function appendOperator(operator) {
+            document.getElementById('display').value += operator;
+        }
+
+        function calculateResult() {
+            try {
+                const result = eval(document.getElementById('display').value);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                alert('Invalid input or expression');
+                clearDisplay();
+            }
+        }
+
+        function calculateSquare() {
+            const input = document.getElementById('display').value;
+            try {
+                const result = eval(`Math.pow(${input}, 2)`);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                alert('Invalid input');
+                clearDisplay();
+            }
+        }
+
+        function calculateCube() {
+            const input = document.getElementById('display').value;
+            try {
+                const result = eval(`Math.pow(${input}, 3)`);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                alert('Invalid input');
+                clearDisplay();
+            }
+        }
+
+        function calculateLog() {
+            const input = document.getElementById('display').value;
+            try {
+                const result = Math.log(parseFloat(input));
+                document.getElementById('display').value = result;
+            } catch (error) {
+                alert('Invalid input');
+                clearDisplay();
+            }
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+    </script>
+
+</body>
+
+</html>
