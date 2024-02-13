@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="employees.xsl" type="text/xsl"?>
+<!DOCTYPE employees SYSTEM "employees.dtd">
+<employees>
+    <employee>
+        <id>1</id>
+        <name>John Doe</name>
+        <position>Software Engineer</position>
+        <department>IT</department>
+        <salary>75000</salary>
+    </employee>
+    <employee >
+        <id>2</id>
+        <name>Jane Smith</name>
+        <position>Marketing Specialist</position>
+        <department>Marketing</department>
+        <salary>60000</salary>
+    </employee>
+    <employee >
+        <id>3</id>
+        <name>Moe Lester</name>
+        <position>Software Developer</position>
+        <department>DevOps</department>
+        <salary>80000</salary>
+    </employee>
+    <employee>
+        <id>4</id>
+        <name>Mike Oxmaul</name>
+        <position>Marketing Specialist</position>
+        <department>Marketing</department>
+        <salary>50000</salary>
+    </employee>
+    <employee>
+        <id>5</id>
+        <name>Ben Dover</name>
+        <position>Hiring Manager</position>
+        <department>Management</department>
+        <salary>40000</salary>
+    </employee>
+</employees>
