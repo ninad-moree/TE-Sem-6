@@ -7,8 +7,7 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
     private Text word = new Text();
 
     @Override
-    public void map(LongWritable key, Text value, Context context) throws IOException,
-            InterruptedException {
+    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
         String[] words = line.split("\\s+"); // Splitting by whitespace
         for (String word : words) {
