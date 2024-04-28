@@ -60,7 +60,10 @@ public:
 
 int main() {
     Solution s;
-    vector<vector<string>> ans = s.solveNQueens(4);
+    int n;
+    cout<<"Enter size of board: ";
+    cin>>n;
+    vector<vector<string>> ans = s.solveNQueens(n);
 
     for (int i = 0; i < ans.size(); i++) {
         for (int j = 0; j < ans[i].size(); j++)
