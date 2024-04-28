@@ -62,7 +62,11 @@ int main() {
     graph.addEdge(3, 4, 3);
     graph.addEdge(4, 5, 2);
 
-    int source = 0; // Source node for shortest path calculation
+    // int source = 0; // Source node for shortest path calculation
+    int src;
+    cout<<"Enter  the source vertex: ";
+    cin>>src;
+    int source = src;
 
     vector<int> shortestDistances = graph.dijkstra(source);
 
