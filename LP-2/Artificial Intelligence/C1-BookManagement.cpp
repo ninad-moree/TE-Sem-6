@@ -43,6 +43,21 @@ public:
         }
     }
 
+    void deleteBook(const string &title) {
+        bool found = false;
+        for (int i = 0; i < books.size(); ++i) {
+            if (books[i].title == title) {
+                books.erase(books.begin() + i);
+                cout << "Book deleted successfully.\n";
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            cout << "Book not found.\n";
+        }
+    }
+
 private:
     void displayBookInfo(const Book &book) {
         cout << "Title: " << book.title << "\n";
@@ -59,7 +74,8 @@ int main() {
         cout << "1. Add a book\n";
         cout << "2. Search for a book\n";
         cout << "3. Display all books\n";
-        cout << "4. Exit\n";
+        cout << "4. Delete a book\n";
+        cout << "5. Exit\n";
         cout << "Enter your choice: ";
 
         int choice;
@@ -93,7 +109,14 @@ int main() {
         case 3:
             library.displayAllBooks();
             break;
-        case 4:
+        case 4: {
+            string title1;
+            cout << "Enter book title to delete: ";
+            getline(cin, title1);
+            library.deleteBook(title1);
+            break;
+        }
+        case 5:
             cout << "Exiting the program.\n";
             return 0;
         default:
