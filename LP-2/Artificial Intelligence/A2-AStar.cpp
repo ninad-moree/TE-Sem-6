@@ -94,8 +94,22 @@ int main() {
         {0, 0, 0, 0, 0}
     };
 
-    pair<int, int> start = {0, 0};
-    pair<int, int> end = {4, 4};
+    // pair<int, int> start = {0, 0};
+    // pair<int, int> end = {4, 4};
+
+    int startx;
+    int starty;
+    int endx;
+    int endy;
+
+    cout<<"Enter Start Co-ordinates:";
+    cin>>startx>>starty;
+
+    cout<<"Enter End Co-ordinates:";
+    cin>>endx>>endy;
+
+    pair<int, int> start = {startx, starty};
+    pair<int, int> end = {endx, endy};
 
     vector<pair<int, int>> path = findPath(grid, start, end);
 
