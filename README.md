@@ -18,3 +18,7 @@
 <a href="LP-2">
       3. Laboratory Practice - 2
 </a>
+
+https://youtu.be/zR12wFqEKYc?si=irhNT1i0rxbqLveU
+
+https://youtu.be/NsOpgP0OqVk?si=9u8li4mMtVnWYVXL
