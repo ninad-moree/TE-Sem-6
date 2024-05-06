@@ -1,0 +1,19 @@
+<apex:page controller="CalculatorController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Add" action="{!add}" rerender="resultPanel"/>
+                <apex:commandButton value="Subtract" action="{!subtract}" rerender="resultPanel"/>
+                <apex:commandButton value="Multiply" action="{!multiply}" rerender="resultPanel"/>
+                <apex:commandButton value="Divide" action="{!divide}"  rerender="resultPanel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                <apex:inputText value="{!num1}" label="Number 1"/>
+                <apex:inputText value="{!num2}" label="Number 2"/>
+            </apex:pageBlockSection>
+            <apex:outputPanel id="resultPanel">
+                <apex:outputText value="Result: {!result}" />
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
