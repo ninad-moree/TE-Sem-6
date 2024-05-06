@@ -37,8 +37,7 @@ public class WeatherDataAverage {
     public static class FloatAverageReducer extends Reducer<Text, FloatWritable, Text, FloatWritable> {
         private FloatWritable result = new FloatWritable();
 
-        public void reduce(Text key, Iterable<FloatWritable> values, Context context)
-                throws IOException, InterruptedException {
+        public void reduce(Text key, Iterable<FloatWritable> values, Context context) throws IOException, InterruptedException {
             float sum = 0;
             int count = 0;
             for (FloatWritable a : values){sum += a.get();count++;}
