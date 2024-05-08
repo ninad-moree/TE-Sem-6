@@ -16,13 +16,13 @@ public:
         adj[v].push_back(u); 
     }
 
-    void DFSUtil(int v, vector<bool>& visited) {
+    void DFSUtil(int v, vector<bool>& visited, int level) {
         visited[v] = true;
-        cout << v << " ";
+        cout << v << " level " << level << " " << endl;
 
         for (int i : adj[v]) {
             if (!visited[i]) {
-                DFSUtil(i, visited);
+                DFSUtil(i, visited, level+1);
             }
         }
     }
@@ -30,28 +30,30 @@ public:
     void DFS(int v) {
         vector<bool> visited(V, false);
         cout << "Depth First Search (DFS) starting from vertex " << v << ":\n";
-        DFSUtil(v, visited);
+        DFSUtil(v, visited, 0);
         cout << "\n";
     }
 
     void BFS(int v) {
         vector<bool> visited(V, false);
-        queue<int> q;
+        queue<pair<int, int>> q;
 
         visited[v] = true;
-        q.push(v);
+        q.push({v, 0});
 
         cout << "Breadth First Search (BFS) starting from vertex " << v << ":\n";
 
         while (!q.empty()) {
-            v = q.front();
-            cout << v << " ";
+            pair<int, int> node = q.front();
+            int vertex = node.first;
+            int level = node.second;
+            cout << vertex << " (Level " << level << ") ";
             q.pop();
 
-            for (int i : adj[v]) {
+            for (int i : adj[vertex]) {
                 if (!visited[i]) {
                     visited[i] = true;
-                    q.push(i);
+                    q.push({i, level + 1});
                 }
             }
         }
@@ -73,7 +75,7 @@ int main() {
     g.addEdge(3, 5);
     g.addEdge(4, 5);
 
-    g.DFS(1);
+    // g.DFS(1);
     g.BFS(3);
 
     return 0;
